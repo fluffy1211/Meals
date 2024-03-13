@@ -26,6 +26,12 @@ submit.addEventListener('click', () => {
         .then(response => response.data)
         .then(response => {
             ul.innerHTML = '';
+            if (response.meals === null) {
+                const noResult = document.createElement('p')
+                noResult.classList.add('noResult');
+                noResult.innerHTML = 'Aucun résultat';
+                ul.appendChild(noResult);
+            } else {
             response.meals.forEach(meal => {
                 const html = `
                 <h1>${meal.strMeal}</h1>
@@ -38,9 +44,15 @@ submit.addEventListener('click', () => {
                 li.innerHTML = html;
                 ul.appendChild(li);
             });
-        });
+        }
+        }
+        )
+        .catch(error => console.error(error));
 }
 );
+
+
+
 
 
 
