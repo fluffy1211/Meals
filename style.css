@@ -1,16 +1,24 @@
+.title {
+    text-align: center;
+    padding-top: 20px;
+    font-size: 2rem;
+}
+
 img {
-    width: 20%;
-    height: 20%;
+    width: 40%;
     object-fit: cover;
 }
 
 .center {
     text-align: center;
     padding-top: 20px;
+    
 }
 
 h1 {
     text-align: center;
+    font-size: 1.1rem;
+    padding-bottom: 5px;
 }
 
 img {
@@ -22,5 +30,29 @@ img {
 .center2 {
     text-align: center;
     padding-top: 10px;
+    margin-left: 20px;
+}
+
+.results {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+
+input {
+    margin-right: 20px;
+    width: 200px;
+    height: 30px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+button {
+    width: 150px;
+    height: 38px;
+    border-radius: 20px;
+    text-align: center;
+    cursor: pointer;
+    margin-bottom: 50px;
+    margin-right: 20px;
 }
 

@@ -17,11 +17,11 @@ const ul = document.querySelector('.results');
 const listFavorites = document.querySelector('.favorites');
 const favButton = document.querySelector('.favButton');
 
+
 let ids = [];
 
 submit.addEventListener('click', () => {
     const meals = search.value;
-    console.log(meals);
     (axios.get(`https://www.themealdb.com/api/json/v1/1/search.php?s=${meals}`))
         .then(response => response.data)
         .then(response => {
@@ -30,9 +30,11 @@ submit.addEventListener('click', () => {
                 const html = `
                 <h1>${meal.strMeal}</h1>
                 <img src="${meal.strMealThumb}" alt="image of ${meal.strMeal}">
-                
+                <div class="center2">
+                <button class="favButton">Ajouter aux favoris</button>
+                </div>
                 `;
-                const li = document.createElement('li');
+                const li = document.createElement('p');
                 li.innerHTML = html;
                 ul.appendChild(li);
             });
